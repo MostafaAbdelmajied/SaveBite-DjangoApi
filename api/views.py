@@ -48,7 +48,7 @@ class EmbedDataView(APIView):
 
         return Response({
             "image_url": image.image.url,
-            # "image": base64.b64encode(img_byte_arr.getvalue()).decode(),
+            "image": base64.b64encode(img_byte_arr.getvalue()).decode(),
             "fernet_key": fernet_key.decode()  # Provide the Fernet key
         }, status=status.HTTP_200_OK)
 
