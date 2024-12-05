@@ -16,13 +16,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from api.views import EmbedDataView, ExtractDataView
+from numpy.ma.tests.test_mrecords import TestView
+
+from api.views import EmbedDataView, ExtractDataView, TestProjectView
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
     path('embed/', EmbedDataView.as_view(), name='embed_data'),
     path('extract/', ExtractDataView.as_view(), name='extract_data'),
+    path('test/', TestProjectView.as_view(), name='test'),
 ]
 
 if settings.DEBUG:

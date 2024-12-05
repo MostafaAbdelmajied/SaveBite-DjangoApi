@@ -78,3 +78,7 @@ class ExtractDataView(APIView):
         # Extract email and password
         email, password = decrypted_data.decode().split(":")
         return Response({"email": email, "password": password}, status=status.HTTP_200_OK)
+
+class TestProjectView(APIView):
+    def get(self, request):
+        return Response({"hello": "world"}, status=status.HTTP_200_OK)
