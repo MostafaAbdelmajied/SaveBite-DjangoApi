@@ -58,6 +58,8 @@ class ExtractDataView(APIView):
         image_file = request.FILES.get('image')
         fernet_key = request.data.get('fernet_key')
 
+        return Response(image_file)
+
         if not (image_file and fernet_key):
             return Response({"error": "Image and Fernet key are required"}, status=status.HTTP_400_BAD_REQUEST)
 
